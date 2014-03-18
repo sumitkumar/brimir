@@ -11,3 +11,6 @@ before_script:
   - psql -c 'CREATE DATABASE brimir_test;' -U postgres
   - cp config/database.travis.yml config/database.yml
   - bundle exec rake db:migrate
+
+after_failure:
+  - find .
